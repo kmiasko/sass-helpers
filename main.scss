@@ -1,5 +1,5 @@
 @import 'reset';
-@import 'topography';
+@import 'typography';
 
-@include topography(4, 5, 50em);
+@include typography(4, 5, 50em);
 

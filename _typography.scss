@@ -17,6 +17,7 @@ $fg_color: #333;
 // line height
 $line_he: 1.45;
 
+
 // defaults
 html { font-size: 1em; }
 
@@ -78,4 +79,21 @@ $type-scale: (
     }
   }
 }
+
+$font-ratio: 1.333;
+
+@function font-size($size, $ratio: $font-ratio) {
+  $cal: 1;
+  $mul: abs($size);
+
+  @if $size == 0 { @return 1em; }
+
+  @for $i from 1 through $mul {
+    @if $size < 0 { $cal: $cal / $ratio; }
+    @else { $cal: $cal * $ratio; }
+  }
+
+  @return #{$cal}em;
+}
+
 
